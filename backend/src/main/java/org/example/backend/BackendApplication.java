@@ -4,7 +4,7 @@ package org.example.backend;
 import org.example.backend.Movie.Genre;
 import org.example.backend.Movie.Movie;
 import org.example.backend.Movie.MovieRepository;
-import org.example.backend.Movietheatre.MovieTheatreModel;
+import org.example.backend.Movietheatre.MovieTheatre;
 import org.example.backend.Movietheatre.MovieTheatreRepository;
 import org.example.backend.Screening.Screening;
 import org.example.backend.Screening.ScreeningRepository;
@@ -24,22 +24,24 @@ public class BackendApplication {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(MovieRepository movieRepository, ScreeningRepository screeningRepository) {
+    CommandLineRunner commandLineRunner(MovieRepository movieRepository, ScreeningRepository screeningRepository, MovieTheatreRepository movieTheatreRepository) {
         return args -> {
             Movie movie = new Movie();
             movie.setGenre(Genre.ACTION);
             movie.setName("Star wars");
 
+            MovieTheatre movieTheatre = new MovieTheatre();
+            movieTheatre.setSeats(120);
+            movieTheatre.setName("Theatre no. 1");
 
             Screening screening1 = new Screening();
             screening1.setLength(120);
             screening1.setMovie(movie);
+            screening1.setMovieTheatre(movieTheatre);
 
-            Set<Screening> screeningSet = new HashSet<>();
-            screeningSet.add(screening1);
 
-            movie.setScreenings(screeningSet);
 
+            movieTheatreRepository.save(movieTheatre);
             movieRepository.save(movie);
             screeningRepository.save(screening1);
         };

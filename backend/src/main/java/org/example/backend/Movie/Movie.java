@@ -1,5 +1,6 @@
 package org.example.backend.Movie;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.example.backend.Screening.Screening;
 
@@ -15,6 +16,7 @@ public class Movie {
     @Enumerated(EnumType.STRING)
     private Genre genre;
     @OneToMany(mappedBy = "movie")
+    @JsonManagedReference
     private Set<Screening> screenings;
 
     public Set<Screening> getScreenings() {
