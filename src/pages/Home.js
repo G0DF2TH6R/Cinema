@@ -18,7 +18,7 @@ const Home = () => {
     return(
         <div className="home">
             <h1>Proovige ühte neist filmidest!</h1>
-            {<MovieList movies={movies} /> }
+            <MovieList movies={movies.slice(0, 3)} />
         </div>
     )
 }

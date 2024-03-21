@@ -29,21 +29,25 @@ public class BackendApplication {
             Movie movie = new Movie();
             movie.setGenre(Genre.ACTION);
             movie.setName("Star wars");
+            movie.setLength(110);
             movieRepository.save(movie);
 
             movie = new Movie();
             movie.setGenre(Genre.COMEDY);
             movie.setName("Funny laughs");
+            movie.setLength(90);
             movieRepository.save(movie);
 
             movie = new Movie();
             movie.setGenre(Genre.ROMANCE);
             movie.setName("Long kisses");
+            movie.setLength(150);
             movieRepository.save(movie);
 
             movie = new Movie();
             movie.setGenre(Genre.DRAMA);
             movie.setName("Murder mystery");
+            movie.setLength(120);
             movieRepository.save(movie);
 
 
@@ -52,7 +56,6 @@ public class BackendApplication {
             movieTheatre.setName("Theatre no. 1");
 
             Screening screening1 = new Screening();
-            screening1.setLength(120);
             screening1.setMovie(movie);
             screening1.setMovieTheatre(movieTheatre);
 

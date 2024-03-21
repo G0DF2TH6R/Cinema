@@ -48,7 +48,6 @@ public class ScreeningController {
         Screening screening = new Screening();
         screening.setMovie(movie);
         screening.setMovieTheatre(movieTheatre);
-        screening.setLength(request.getLength());
 
         screeningRepository.save(screening);
 

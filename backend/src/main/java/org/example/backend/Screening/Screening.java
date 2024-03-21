@@ -21,8 +21,6 @@ public class Screening {
     @JsonBackReference
     private MovieTheatre movieTheatre;
 
-    private Integer length;
-
     public MovieTheatre getMovieTheatre() {
         return movieTheatre;
     }
@@ -47,11 +45,4 @@ public class Screening {
         this.movie = movie;
     }
 
-    public Integer getLength() {
-        return length;
-    }
-
-    public void setLength(Integer length) {
-        this.length = length;
-    }
 }

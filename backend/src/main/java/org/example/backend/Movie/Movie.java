@@ -19,6 +19,16 @@ public class Movie {
     @JsonManagedReference
     private Set<Screening> screenings;
 
+    private Integer length;
+
+    public Integer getLength() {
+        return length;
+    }
+
+    public void setLength(Integer length) {
+        this.length = length;
+    }
+
     public Set<Screening> getScreenings() {
         return screenings;
     }
