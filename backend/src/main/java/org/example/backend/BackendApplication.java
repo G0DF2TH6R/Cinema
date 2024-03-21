@@ -29,6 +29,23 @@ public class BackendApplication {
             Movie movie = new Movie();
             movie.setGenre(Genre.ACTION);
             movie.setName("Star wars");
+            movieRepository.save(movie);
+
+            movie = new Movie();
+            movie.setGenre(Genre.COMEDY);
+            movie.setName("Funny laughs");
+            movieRepository.save(movie);
+
+            movie = new Movie();
+            movie.setGenre(Genre.ROMANCE);
+            movie.setName("Long kisses");
+            movieRepository.save(movie);
+
+            movie = new Movie();
+            movie.setGenre(Genre.DRAMA);
+            movie.setName("Murder mystery");
+            movieRepository.save(movie);
+
 
             MovieTheatre movieTheatre = new MovieTheatre();
             movieTheatre.setSeats(120);
@@ -42,7 +59,6 @@ public class BackendApplication {
 
 
             movieTheatreRepository.save(movieTheatre);
-            movieRepository.save(movie);
             screeningRepository.save(screening1);
         };
     }
